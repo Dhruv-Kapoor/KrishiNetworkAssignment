@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Krishi Network Assignment</string>
+    <string name="et_name_hint">Name</string>
+    <string name="et_email_hint">Email</string>
+    <string name="submit_btn_text">Submit</string>
+    <string name="fetch_btn_text">Fetch</string>
+    <string name="move_to_activity1">Go to Activity 1</string>
+    <string name="move_to_activity2">Go to Activity 2</string>
+
+    <string name="district_format">%1$s, %2$s</string>
+    <string name="area_format">Area: %1$s sq. km</string>
+    <string name="last_date_format">Last Date: %1$s</string>
+</resources>

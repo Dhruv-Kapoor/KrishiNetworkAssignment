@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.krishinetworkassignment.dataClasses.OtherMandiItem" />
+
+        <variable
+            name="color"
+            type="Integer" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:cardBackgroundColor="@{color}"
+        app:cardCornerRadius="@dimen/list_card_corner_radius"
+        tools:cardBackgroundColor="@color/list_color_1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{item.hindiName}"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="Name" />
+
+            <TextView
+                android:id="@+id/tvDistrict"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvName"
+                android:text="@{@string/district_format(item.district, item.state)}"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="District, State" />
+
+            <TextView
+                android:id="@+id/tvArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDistrict"
+                android:layout_marginTop="24dp"
+                android:text="@{@string/area_format(item.km)}"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                tools:text="Area: 100 sq. km" />
+
+            <TextView
+                android:id="@+id/tvLastDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvArea"
+                android:text="@{@string/last_date_format(item.lastDate)}"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                tools:text="Last Date: 1 din pehle" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                glide="@{item.image}"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                android:theme="@style/CircularImageView" />
+
+            <ImageView
+                location="@{item}"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tvLastDate"
+                android:layout_alignParentEnd="true"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_locate"
+                app:tint="@color/white" />
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
